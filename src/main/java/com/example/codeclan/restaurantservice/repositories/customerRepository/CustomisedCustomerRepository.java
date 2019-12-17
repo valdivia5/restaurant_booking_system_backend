@@ -1,5 +1,6 @@
 package com.example.codeclan.restaurantservice.repositories.customerRepository;
 
+import com.example.codeclan.restaurantservice.models.Customer;
 import com.example.codeclan.restaurantservice.models.RestaurantTable;
 
 import java.util.List;

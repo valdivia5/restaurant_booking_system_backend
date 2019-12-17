@@ -43,12 +43,12 @@ class RestaurantserviceApplicationTests {
 		assertEquals(3, found.size());
 	}
 
-//	@Test
-//	public void canGetAllCustomersForABookedTable(){
-//		List<Customer> found = tableRepository.findAllCustomersByRestaurantTable(1L);
-//		assertEquals(1, found.size());
-//		assertEquals("Harry",found.get(0).getName());
-//	}
+	@Test
+	public void canGetAllCustomersForABookedTable(){
+		List<Customer> found = tableRepository.findAllCustomersByRestaurantTable(1L);
+		assertEquals(1, found.size());
+		assertEquals("Harry",found.get(0).getName());
+	}
 //	@Test
 //	public void canMakeBooking(){
 //		List<Booking> found = bookingRepository.makeBooking();
@@ -80,16 +80,26 @@ class RestaurantserviceApplicationTests {
 //
 //	}
 //
-//	@Test
-//	public void canCreateACustomer(){
-//	Customer customer = new Customer("Han", "han@hello.com", 0 );
-//	customerRepository.save(customer);
-//	assertEquals(1, customerRepository.findAll());
-//	}
+	@Test
+	public void canFindAllCustomers(){
+		List<Customer> foundCustomer = customerRepository.findAll();
+		assertEquals(3, foundCustomer.size());
+	}
+
+	@Test
+	public void canCreateACustomer(){
+	Customer customer = new Customer("Han", "han@hello.com", 0 );
+	customerRepository.save(customer);
+	List<Customer> foundCustomer = customerRepository.findAll();
+	assertEquals(4, foundCustomer.size());
+	}
 //
 //	@Test
 //	public void canDestroyCustomer(){
-//
+//		Customer customer = new Customer("Han", "han@hello.com", 0 );
+//		customerRepository.save(customer);
+//		List<Customer> foundCustomer = customerRepository.destroyCustomerById(1L);
+//	assertEquals(3, foundCustomer.size());
 //	}
 
 

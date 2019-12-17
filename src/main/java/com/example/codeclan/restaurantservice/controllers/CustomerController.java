@@ -12,4 +12,9 @@ public class CustomerController {
 
     @Autowired
     CustomerRepository customerRepository;
+
+//    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+//    public void deleteCell(@PathVariable long id){
+//        cellRepository.deleteById(id);
+//    }
 }
