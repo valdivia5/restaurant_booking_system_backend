@@ -20,6 +20,7 @@ public class CustomisedCustomerRepositoryImpl implements CustomisedCustomerRepos
     @Transactional
     public List<RestaurantTable> findAllTablesByCustomer(Long id){
         List<RestaurantTable> result = null;
+
         Session session = entityManager.unwrap(Session.class);
         Criteria criteria = session.createCriteria(RestaurantTable.class);
         criteria.createAlias("bookings", "booking");

@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface TableRepository extends JpaRepository<RestaurantTable, Long>, CustomisedTableRepository {
-    List<Customer> findAllCustomersByTable (Long id);
+    List<Customer> findAllCustomersByRestaurantTable (Long id);
 }

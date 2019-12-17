@@ -5,6 +5,6 @@ import com.example.codeclan.restaurantservice.models.Customer;
 import java.util.List;
 
 public interface CustomisedTableRepository{
-    List<Customer> findAllCustomersByTable (Long id);
+    List<Customer> findAllCustomersByRestaurantTable (Long id);
 
 }

@@ -34,6 +34,7 @@ class RestaurantserviceApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 	@Test
@@ -44,10 +45,57 @@ class RestaurantserviceApplicationTests {
 
 	@Test
 	public void canGetAllCustomersForABookedTable(){
-		List<Customer> found = tableRepository.findAllCustomersByTable(1L);
+		List<Customer> found = tableRepository.findAllCustomersByRestaurantTable(1L);
 		assertEquals(1, found.size());
 		assertEquals("Harry",found.get(0).getName());
 	}
+	@Test
+	public void canMakeBooking(){
+		List<Booking> found = bookingRepository.makeBooking();
+		assertEquals(1, found.size());
+	}
+
+	@Test
+	public void canDeleteBooking(){
+
+	}
+
+	@Test
+	public void canFindSingleCostumerByName(){
+
+	}
+
+	@Test
+	public void findAllTables(){
+
+	}
+
+	@Test
+	public void findAllBookedTables(){
+
+	}
+
+	@Test
+	public void findAllAvailableTables(){
+
+	}
+
+	@Test
+	public void canCreateACustomer(){
+	Customer customer = new Customer("Han", "han@hello.com", 0 );
+	customerRepository.save(customer);
+	assertEquals(1, customerRepository.findAll());
+	}
+
+	@Test
+	public void canDestroyCustomer(){
+
+	}
+
+
+
+
+
 
 
 
