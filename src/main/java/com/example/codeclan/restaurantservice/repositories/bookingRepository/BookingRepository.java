@@ -12,7 +12,7 @@ import java.util.List;
 public interface BookingRepository extends JpaRepository<Booking, Long> {
         List<Booking> findAllBookingsByDate(LocalDateTime date);
 
-    List<Booking> makeBooking();
+//    List<Booking> makeBooking();
 }
 
 
