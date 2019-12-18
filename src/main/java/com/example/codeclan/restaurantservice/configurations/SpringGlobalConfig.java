@@ -1,5 +1,8 @@
 package com.example.codeclan.restaurantservice.configurations;
 
+import com.example.codeclan.restaurantservice.models.Booking;
+import com.example.codeclan.restaurantservice.models.Customer;
+import com.example.codeclan.restaurantservice.models.RestaurantTable;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -16,6 +19,7 @@ public class SpringGlobalConfig implements RepositoryRestConfigurer, WebMvcConfi
 
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+        config.exposeIdsFor(Customer.class, RestaurantTable.class, Booking.class);
         config.getCorsRegistry()
                 .addMapping(CORS_BASE_PATTERN)
                 .allowedOrigins(ALLOWED_ORIGINS)
